@@ -12,7 +12,7 @@ class ShoppingRepository(private val shoppingDao: shoppingDao){
     {
         shoppingDao.upsert(item)
     }
-    suspend fun delete(item:ShoppingItem)
+     suspend fun delete(item:ShoppingItem)
     {
         shoppingDao.delete(item)
     }

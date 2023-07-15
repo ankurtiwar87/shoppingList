@@ -10,6 +10,7 @@ import com.ankur.shoppinglist.databinding.ShoppingItemBinding
 import com.ankur.shoppinglist.ui.shoppingList.ShoppingViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class ShoppingItemAdapter(private val list :ArrayList<ShoppingItem>,private val mainViewModel:ShoppingViewModel):
@@ -42,26 +43,28 @@ class ShoppingItemAdapter(private val list :ArrayList<ShoppingItem>,private val 
         holder.binding.textView2.text="${currentItem.amount}"
 
         holder.binding.imageView.setOnClickListener {
-            GlobalScope.launch (Dispatchers.Main){
+
                 mainViewModel.delete(currentItem)
 
-            }
         }
 
         holder.binding.imageView2.setOnClickListener{
             currentItem.amount++
-            GlobalScope.launch (Dispatchers.Main) {
+
 
                 mainViewModel.upsert(currentItem)
-            }
+
+
+
+
         }
 
         holder.binding.imageView3.setOnClickListener {
             if (currentItem.amount>0) {
                 currentItem.amount--
-                GlobalScope.launch (Dispatchers.Main) {
+
                     mainViewModel.upsert(currentItem)
-                }
+
             }
         }
     }

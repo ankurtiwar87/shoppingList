@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName="Shopping_Item")
 data class ShoppingItem(
 
+
+
     var name : String,
     var amount :Int
 )

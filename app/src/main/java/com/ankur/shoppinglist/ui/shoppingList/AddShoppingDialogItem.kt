@@ -4,7 +4,6 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
-import com.ankur.shoppinglist.R
 import com.ankur.shoppinglist.data.db.entities.ShoppingItem
 import com.ankur.shoppinglist.databinding.DialogAddShopppingItemBinding
 
